@@ -1,0 +1,5 @@
+com/exemplo/sistemachamados/Chamado.class
+com/exemplo/sistemachamados/Chamado$Status.class
+com/exemplo/sistemachamados/SistemaChamadosApplication.class
+com/exemplo/sistemachamados/ChamadoController.class
+com/exemplo/sistemachamados/ChamadoRepository.class
