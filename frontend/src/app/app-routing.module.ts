@@ -1,18 +1,27 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ChamadosListaComponent } from './pages/chamados-lista/chamados-lista.component';
-import { ChamadoDetalhesComponent } from './pages/chamado-detalhes/chamado-detalhes.component';
-import { NovoChamadoComponent } from './pages/novo-chamado/novo-chamado.component';
+
+import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { ClientesComponent } from './pages/clientes/clientes.component';
+import { TecnicoListComponent } from './pages/tecnicos/tecnico-list/tecnico-list.component';
+import { TecnicoFormComponent } from './pages/tecnicos/tecnico-form/tecnico-form.component';
+import { ChamadoListComponent } from './pages/chamados/chamado-list/chamado-list.component';
+import { ChamadoFormComponent } from './pages/chamados/chamado-form/chamado-form.component';
+import { ClienteFormComponent } from './pages/clientes/cliente-form/cliente-form.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'chamados', pathMatch: 'full' },
-  { path: 'chamados', component: ChamadosListaComponent },
-  { path: 'chamados/novo', component: NovoChamadoComponent },
-  { path: 'chamados/:id', component: ChamadoDetalhesComponent },
+  { path: '', component: DashboardComponent },
+  { path: 'clientes', component: ClientesComponent },
+  { path: 'tecnicos', component: TecnicoListComponent },
+  { path: 'tecnicos/novo', component: TecnicoFormComponent },
+  { path: 'chamados', component: ChamadoListComponent },
+  { path: 'chamados/novo', component: ChamadoFormComponent },
+  { path: 'clientes/novo', component: ClienteFormComponent },
+  { path: 'dashboard', component: DashboardComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

@@ -1,0 +1,32 @@
+<div class="h-screen flex flex-col">
+  <!-- Navbar -->
+  <nav class="bg-blue-600 text-white p-4 shadow-md">
+    <h1 class="text-xl font-semibold">Sistema de Chamados</h1>
+  </nav>
+
+  <!-- Conteúdo principal com sidebar -->
+  <div class="flex flex-1">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-100 p-4 border-r">
+      <ul class="space-y-2">
+        <li>
+          <a routerLink="/dashboard" routerLinkActive="font-bold text-blue-600">Dashboard</a>
+        </li>
+        <li>
+          <a routerLink="/clientes" routerLinkActive="font-bold text-blue-600">Clientes</a>
+        </li>
+        <li>
+          <a routerLink="/tecnicos" routerLinkActive="font-bold text-blue-600">Técnicos</a>
+        </li>
+        <li>
+          <a routerLink="/chamados" routerLinkActive="font-bold text-blue-600">Chamados</a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- Área de rotas -->
+    <main class="flex-1 p-6">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
+</div>

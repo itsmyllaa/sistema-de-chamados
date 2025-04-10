@@ -1,0 +1,23 @@
+<div class="clientes-container">
+  <h2>Clientes</h2>
+  <button (click)="novoCliente()">Novo Cliente</button>
+
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>CPF/CNPJ</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{ cliente.id }}</td>
+      <td>{{ cliente.nome }}</td>
+      <td>{{ cliente.cpfOuCnpj }}</td>
+      <td>{{ cliente.email }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

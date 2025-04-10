@@ -1,0 +1,45 @@
+<div class="chamado-form-container">
+  <h2>{{ chamado.id ? 'Editar Chamado' : 'Novo Chamado' }}</h2>
+
+  <form #form="ngForm" (ngSubmit)="salvar()">
+    <div>
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" name="titulo" [(ngModel)]="chamado.titulo" required>
+    </div>
+
+    <div>
+      <label for="descricao">Descrição</label>
+      <textarea id="descricao" name="descricao" [(ngModel)]="chamado.descricao" required></textarea>
+    </div>
+
+    <div>
+      <label for="prioridade">Prioridade</label>
+      <select id="prioridade" name="prioridade" [(ngModel)]="chamado.prioridade" required>
+        <option value="BAIXA">Baixa</option>
+        <option value="MEDIA">Média</option>
+        <option value="ALTA">Alta</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="status">Status</label>
+      <select id="status" name="status" [(ngModel)]="chamado.status" required>
+        <option value="ABERTO">Aberto</option>
+        <option value="EM_ANDAMENTO">Em Andamento</option>
+        <option value="FECHADO">Fechado</option>
+      </select>
+    </div>
+
+    <div>
+      <label for="tecnico">Técnico</label>
+      <input type="text" id="tecnico" name="tecnico" [(ngModel)]="chamado.tecnico" required>
+    </div>
+
+    <div>
+      <label for="cliente">Cliente</label>
+      <input type="text" id="cliente" name="cliente" [(ngModel)]="chamado.cliente" required>
+    </div>
+
+    <button type="submit">Salvar</button>
+  </form>
+</div>

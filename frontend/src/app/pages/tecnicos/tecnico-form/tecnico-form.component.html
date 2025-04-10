@@ -1,0 +1,25 @@
+<div class="form-container">
+  <h2 class="titulo-centralizado">{{ tecnico.id ? 'Editar Técnico' : 'Novo Técnico' }}</h2>
+
+  <form (ngSubmit)="salvar()" #form="ngForm">
+    <!-- Campos -->
+    <div class="form-group">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" [(ngModel)]="tecnico.nome" required />
+    </div>
+
+    <div class="form-group">
+      <label for="cpf">CPF</label>
+      <input type="text" id="cpf" name="cpf" [(ngModel)]="tecnico.cpf" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" [(ngModel)]="tecnico.email" required />
+    </div>
+
+    <div class="botao-centralizado">
+      <button type="submit">Salvar</button>
+    </div>
+  </form>
+</div>

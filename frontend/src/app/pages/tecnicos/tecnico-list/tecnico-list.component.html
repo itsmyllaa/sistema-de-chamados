@@ -1,0 +1,24 @@
+<div class="tecnicos-container">
+  <h2>Lista de Técnicos</h2>
+
+  <button (click)="novoTecnico()">Novo Técnico</button>
+
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>CPF</th>
+      <th>Email</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let tecnico of tecnicos">
+      <td>{{ tecnico.id }}</td>
+      <td>{{ tecnico.nome }}</td>
+      <td>{{ tecnico.cpf }}</td>
+      <td>{{ tecnico.email }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

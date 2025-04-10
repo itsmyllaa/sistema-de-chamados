@@ -1,0 +1,28 @@
+<div class="chamados-container">
+  <h2>Lista de Chamados</h2>
+
+  <button (click)="novoChamado()">Novo Chamado</button>
+
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Título</th>
+      <th>Status</th>
+      <th>Prioridade</th>
+      <th>Técnico</th>
+      <th>Cliente</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let chamado of chamados">
+      <td>{{ chamado.id }}</td>
+      <td>{{ chamado.titulo }}</td>
+      <td>{{ chamado.status }}</td>
+      <td>{{ chamado.prioridade }}</td>
+      <td>{{ chamado.tecnico }}</td>
+      <td>{{ chamado.cliente }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
