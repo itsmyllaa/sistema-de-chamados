@@ -6,8 +6,6 @@
 
 ![Captura de Tela 2025-04-09 às 22 44 49](https://github.com/user-attachments/assets/fa38356c-7107-4b76-8d6d-2ea0a0144228)
 
-![Captura de Tela 2025-04-09 às 22 44 38](https://github.com/user-attachments/assets/1761f9df-d40d-4aeb-8a8c-f04da521d3da)
-
 ![Captura de Tela 2025-04-09 às 22 56 09](https://github.com/user-attachments/assets/7176181e-d95e-4845-9637-36ede31ac388)
 
 ![Captura de Tela 2025-04-09 às 22 56 31](https://github.com/user-attachments/assets/c75df74c-0657-49c7-9c76-7e5a4731ad03)
