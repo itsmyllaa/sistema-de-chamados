@@ -48,4 +48,47 @@ th {
 
 tr:hover {
   background-color: #f0f8ff;
+}/* Customização do Toast */
+.toast {
+  background-color: #28a745; /* Cor verde para sucesso */
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slide-in 0.5s ease-out;
 }
+
+/* Personalizando o toast de erro */
+.toast-error {
+  background-color: #dc3545; /* Cor vermelha para erro */
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slide-in 0.5s ease-out;
+}
+
+/* Personalizando a animação de entrada do toast */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .toast {
+    font-size: 14px; /* Reduzir o tamanho da fonte em telas menores */
+    padding: 8px 15px;
+  }
+}
+
+
+

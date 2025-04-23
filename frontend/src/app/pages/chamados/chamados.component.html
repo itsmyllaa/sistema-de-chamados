@@ -1,9 +1,13 @@
-<div class="page-container">
-  <h1>Chamados</h1>
+<div class="container">
+  <h2>Lista de Chamados</h2>
 
-  <button class="btn-novo">+ Novo Chamado</button>
+  <button (click)="novoChamado()">Novo Chamado</button>
 
-  <div class="lista">
-    <p>Lista de chamados será exibida aqui.</p>
-  </div>
+  <ul>
+    <li *ngFor="let chamado of chamados">
+      <strong>{{ chamado.titulo }}</strong>
+      <p>{{ chamado.descricao }}</p>
+      <p>Status: {{ chamado.status }}</p>
+    </li>
+  </ul>
 </div>

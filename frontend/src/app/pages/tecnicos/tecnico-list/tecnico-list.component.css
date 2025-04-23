@@ -1,53 +1,138 @@
-.tecnicos-container {
-  max-width: 900px;
+/* Container geral */
+.container {
   margin: 40px auto;
-  padding: 20px;
-  background-color: #fefefe;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  padding: 0 20px;
 }
 
-.tecnicos-container h2 {
+/* Título */
+h2 {
   text-align: center;
-  margin-bottom: 24px;
-  color: #333;
+  color: #2e7d32; /* Verde escuro */
+  margin-bottom: 30px;
   font-size: 28px;
 }
 
-button {
-  display: block;
-  margin: 0 auto 20px auto;
+/* Botão "Novo Técnico" */
+button.novo {
+  background-color: #66bb6a; /* Verde claro */
+  color: white;
   padding: 10px 20px;
-  background-color: #0066cc;
-  color: #fff;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  background-color: #004999;
+button.novo:hover {
+  background-color: #43a047; /* Verde um pouco mais escuro */
 }
 
+/* Tabela */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
 }
 
-thead {
-  background-color: #0066cc;
-  color: #fff;
-}
-
-th, td {
+table th, table td {
+  padding: 14px;
   text-align: left;
-  padding: 12px;
   border-bottom: 1px solid #ddd;
 }
 
-tr:hover {
-  background-color: #f1f1f1;
+table th {
+  background-color: #a5d6a7; /* Verde pastel */
+  color: #1b5e20; /* Verde mais escuro */
+  font-weight: 600;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9fbe7;
+}
+
+table tr:hover {
+  background-color: #e8f5e9;
+}
+
+/* Botões de ação */
+td button {
+  padding: 8px 14px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+td button:first-child {
+  background-color: #4caf50; /* Verde padrão */
+}
+
+td button:first-child:hover {
+  background-color: #388e3c;
+}
+
+td button:last-child {
+  background-color: #e53935; /* Vermelho */
+}
+
+td button:last-child:hover {
+  background-color: #c62828;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    display: none;
+  }
+
+  tr {
+    margin-bottom: 15px;
+    background-color: #f1f8e9;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  td {
+    padding: 10px;
+    position: relative;
+    padding-left: 50%;
+  }
+
+  td::before {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    font-weight: bold;
+    color: #2e7d32;
+  }
+
+  td:nth-of-type(1)::before { content: "ID"; }
+  td:nth-of-type(2)::before { content: "Nome"; }
+  td:nth-of-type(3)::before { content: "Email"; }
+  td:nth-of-type(4)::before { content: "CPF"; }
+  td:nth-of-type(5)::before { content: "Telefone"; }
+  td:nth-of-type(6)::before { content: "Especialidade"; }
+  td:nth-of-type(7)::before { content: "Ações"; }
+
+  td button {
+    margin: 5px 5px 5px 0;
+  }
+
+  button.novo {
+    width: 100%;
+  }
 }

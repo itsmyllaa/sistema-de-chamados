@@ -1,6 +1,14 @@
 package com.exemplo.sistemachamados;
 
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Chamado {
@@ -15,8 +23,23 @@ public class Chamado {
     @Enumerated(EnumType.STRING)
     private Status status;
 
+    @Enumerated(EnumType.STRING)
+    private Prioridade prioridade;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"chamados"})
+    private Cliente cliente;
+
+    @ManyToOne
+    @JsonIgnoreProperties({"chamados"})
+    private Tecnico tecnico;
+
     public enum Status {
         ABERTO, EM_ANDAMENTO, FECHADO
+    }
+
+    public enum Prioridade {
+        BAIXA, MEDIA, ALTA
     }
 
     // Getters e setters
@@ -31,4 +54,13 @@ public class Chamado {
 
     public Status getStatus() { return status; }
     public void setStatus(Status status) { this.status = status; }
+
+    public Prioridade getPrioridade() { return prioridade; }
+    public void setPrioridade(Prioridade prioridade) { this.prioridade = prioridade; }
+
+    public Cliente getCliente() { return cliente; }
+    public void setCliente(Cliente cliente) { this.cliente = cliente; }
+
+    public Tecnico getTecnico() { return tecnico; }
+    public void setTecnico(Tecnico tecnico) { this.tecnico = tecnico; }
 }

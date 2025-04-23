@@ -1,11 +1,19 @@
-/*
-  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
-  It is not intended to be used to perform a compilation.
-
-  To learn more about this file see: https://angular.io/config/solution-tsconfig.
-*/
 {
-  "files": [],
+  "compilerOptions": {
+    "target": "es2020",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "preserve",
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
   "references": [
     {
       "path": "./tsconfig.app.json"
@@ -13,5 +21,5 @@
     {
       "path": "./tsconfig.spec.json"
     }
-]
+  ]
 }

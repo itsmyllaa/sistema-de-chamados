@@ -1,4 +1,7 @@
-<app-navbar></app-navbar>
-<div style="padding: 1rem;">
-  <router-outlet></router-outlet>
-</div>
+<nav class="navbar">
+  <a routerLink="/" routerLinkActive="active">Dashboard</a>
+  <a routerLink="/tecnicos" routerLinkActive="active">Técnicos</a>
+  <a routerLink="/clientes" routerLinkActive="active">Clientes</a>
+  <a routerLink="/chamados" routerLinkActive="active">Chamados</a>
+</nav>
+<router-outlet></router-outlet>

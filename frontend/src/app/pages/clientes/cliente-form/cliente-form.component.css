@@ -1,54 +1,170 @@
-.cliente-form-container {
-  padding: 30px;
+/* Container do Formulário */
+.form-container {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.form-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Estilo para os grupos de campos */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Estilo para os rótulos dos campos */
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+/* Estilo para os campos de input */
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+/* Estilo para o botão */
+.form-group .btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.form-group .btn:hover {
+  background-color: #45a049;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .form-container {
+    padding: 15px;
+  }
+
+  .form-group input, .form-group .btn {
+    font-size: 14px;
+  }
+}
+
+form {
   max-width: 500px;
-  margin: auto;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #333;
   text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
 }
 
-.form-group {
-  margin-bottom: 20px;
+div {
+  margin-bottom: 1rem;
 }
 
 label {
   display: block;
-  margin-bottom: 6px;
-  font-weight: 500;
-  color: #444;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #555;
 }
 
 input {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
+  padding: 0.5rem;
+  font-size: 1rem;
   border-radius: 6px;
-  font-size: 16px;
+  border: 1px solid #ccc;
   transition: border-color 0.3s;
 }
 
 input:focus {
-  border-color: #4CAF50;
+  border-color: #45a049;
   outline: none;
 }
 
-.btn {
+button {
   width: 100%;
-  padding: 12px;
-  background-color: #4CAF50;
+  padding: 0.7rem;
+  background-color: #45a049;
   color: white;
+  font-size: 1rem;
   border: none;
-  border-radius: 8px;
-  font-size: 16px;
-  font-weight: bold;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s;
 }
 
-.btn:hover {
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
   background-color: #45a049;
+}
+
+/* Customização do Toast */
+.toast {
+  background-color: #28a745; /* Cor verde para sucesso */
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slide-in 0.5s ease-out;
+}
+
+/* Personalizando o toast de erro */
+.toast-error {
+  background-color: #dc3545; /* Cor vermelha para erro */
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  animation: slide-in 0.5s ease-out;
+}
+
+/* Personalizando a animação de entrada do toast */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .toast {
+    font-size: 14px; /* Reduzir o tamanho da fonte em telas menores */
+    padding: 8px 15px;
+  }
 }

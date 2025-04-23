@@ -1,18 +1,29 @@
 <div class="dashboard-container">
   <h1>Dashboard</h1>
 
-  <div class="cards">
-    <div class="card resumo">
-      <h2>Total de Chamados</h2>
-      <p>{{ totalChamados }}</p>
+  <div class="dashboard-cards">
+    <div class="card">
+      <h3>Chamados Abertos</h3>
+      <p>120</p>
     </div>
-    <div class="card resumo">
-      <h2>Clientes Ativos</h2>
-      <p>{{ totalClientes }}</p>
+    <div class="card">
+      <h3>Chamados Resolvidos</h3>
+      <p>80</p>
     </div>
-    <div class="card resumo">
-      <h2>Técnicos Disponíveis</h2>
-      <p>{{ totalTecnicos }}</p>
+    <div class="card">
+      <h3>Técnicos Disponíveis</h3>
+      <p>5</p>
     </div>
+  </div>
+
+  <div class="dashboard-graph">
+    <h3>Chamados por Mês</h3>
+    <canvas baseChart
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            [legend]="barChartLegend"
+            [chartType]="barChartType">
+    </canvas>
   </div>
 </div>

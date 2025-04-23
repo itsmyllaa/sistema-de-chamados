@@ -1,25 +1,74 @@
-<div class="form-container">
-  <h2 class="titulo-centralizado">{{ tecnico.id ? 'Editar Técnico' : 'Novo Técnico' }}</h2>
+<div class="container mt-4">
+  <h2>{{ isEditMode ? 'Editar Técnico' : 'Cadastrar Técnico' }}</h2>
 
-  <form (ngSubmit)="salvar()" #form="ngForm">
-    <!-- Campos -->
-    <div class="form-group">
+  <form [formGroup]="tecnicoForm" (ngSubmit)="onSubmit()">
+    <div class="form-group mb-3">
       <label for="nome">Nome</label>
-      <input type="text" id="nome" name="nome" [(ngModel)]="tecnico.nome" required />
+      <input id="nome" type="text" class="form-control" formControlName="nome" placeholder="Digite o nome" />
+      <div *ngIf="tecnicoForm.get('nome')?.invalid && tecnicoForm.get('nome')?.touched" class="text-danger">
+        Nome é obrigatório.
+      </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group mb-3">
       <label for="cpf">CPF</label>
-      <input type="text" id="cpf" name="cpf" [(ngModel)]="tecnico.cpf" required />
+      <input id="cpf" type="text" class="form-control" formControlName="cpf" placeholder="Digite o CPF" />
+      <div *ngIf="tecnicoForm.get('cpf')?.invalid && tecnicoForm.get('cpf')?.touched" class="text-danger">
+        CPF inválido ou incompleto.
+      </div>
     </div>
 
-    <div class="form-group">
+    <div class="form-group mb-3">
+      <label for="telefone">Telefone</label>
+      <input id="telefone" type="text" class="form-control" formControlName="telefone" placeholder="Digite o telefone" />
+    </div>
+
+    <div class="form-group mb-3">
+      <label for="especialidade">Especialidade</label>
+      <input id="especialidade" type="text" class="form-control" formControlName="especialidade" placeholder="Digite a especialidade" />
+    </div>
+
+
+    <div class="form-group mb-3">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" [(ngModel)]="tecnico.email" required />
+      <input id="email" type="email" class="form-control" formControlName="email" placeholder="Digite o e-mail" />
+      <div *ngIf="tecnicoForm.get('email')?.invalid && tecnicoForm.get('email')?.touched" class="text-danger">
+        Email inválido.
+      </div>
     </div>
 
-    <div class="botao-centralizado">
-      <button type="submit">Salvar</button>
+    <div class="form-group mb-3">
+      <label for="senha">Senha</label>
+      <input id="senha" type="password" class="form-control" formControlName="senha" placeholder="Digite a senha" />
+      <div *ngIf="tecnicoForm.get('senha')?.invalid && tecnicoForm.get('senha')?.touched" class="text-danger">
+        Senha é obrigatória.
+      </div>
+    </div>
+
+    <div class="form-group mb-4">
+      <label>Perfis</label>
+      <div class="perfis-container">
+        <div class="perfil-option">
+          <input type="checkbox" id="admin" [checked]="tecnicoForm.value.perfis?.includes('ADMIN')" (change)="togglePerfil('ADMIN')" />
+          <label for="admin">ADMIN</label>
+        </div>
+        <div class="perfil-option">
+          <input type="checkbox" id="tecnico" [checked]="tecnicoForm.value.perfis?.includes('TECNICO')" (change)="togglePerfil('TECNICO')" />
+          <label for="tecnico">TECNICO</label>
+        </div>
+        <div class="perfil-option">
+          <input type="checkbox" id="cliente" [checked]="tecnicoForm.value.perfis?.includes('CLIENTE')" (change)="togglePerfil('CLIENTE')" />
+          <label for="cliente">CLIENTE</label>
+        </div>
+      </div>
+    </div>
+    <div class="button-group">
+      <button type="submit" class="btn btn-success me-2" [disabled]="tecnicoForm.invalid">
+        {{ isEditMode ? 'Atualizar' : 'Cadastrar' }}
+      </button>
+      <button type="button" class="btn btn-secondary" (click)="router.navigate(['/tecnicos'])">
+        Cancelar
+      </button>
     </div>
   </form>
 </div>

@@ -1,45 +1,35 @@
-<div class="chamado-form-container">
-  <h2>{{ chamado.id ? 'Editar Chamado' : 'Novo Chamado' }}</h2>
+<h2>{{ isEdit ? 'Editar Chamado' : 'Novo Chamado' }}</h2>
 
-  <form #form="ngForm" (ngSubmit)="salvar()">
-    <div>
-      <label for="titulo">Título</label>
-      <input type="text" id="titulo" name="titulo" [(ngModel)]="chamado.titulo" required>
-    </div>
+<form [formGroup]="form" (ngSubmit)="salvar()">
+  <label>Título:</label>
+  <input formControlName="titulo" />
 
-    <div>
-      <label for="descricao">Descrição</label>
-      <textarea id="descricao" name="descricao" [(ngModel)]="chamado.descricao" required></textarea>
-    </div>
+  <label>Descrição:</label>
+  <textarea formControlName="descricao"></textarea>
 
-    <div>
-      <label for="prioridade">Prioridade</label>
-      <select id="prioridade" name="prioridade" [(ngModel)]="chamado.prioridade" required>
-        <option value="BAIXA">Baixa</option>
-        <option value="MEDIA">Média</option>
-        <option value="ALTA">Alta</option>
-      </select>
-    </div>
+  <label>Status:</label>
+  <select formControlName="status">
+    <option value="ABERTO">Aberto</option>
+    <option value="EM_ANDAMENTO">Em Andamento</option>
+    <option value="FECHADO">Fechado</option>
+  </select>
 
-    <div>
-      <label for="status">Status</label>
-      <select id="status" name="status" [(ngModel)]="chamado.status" required>
-        <option value="ABERTO">Aberto</option>
-        <option value="EM_ANDAMENTO">Em Andamento</option>
-        <option value="FECHADO">Fechado</option>
-      </select>
-    </div>
+  <label>Prioridade:</label>
+  <select formControlName="prioridade">
+    <option value="BAIXA">Baixa</option>
+    <option value="MEDIA">Média</option>
+    <option value="ALTA">Alta</option>
+  </select>
 
-    <div>
-      <label for="tecnico">Técnico</label>
-      <input type="text" id="tecnico" name="tecnico" [(ngModel)]="chamado.tecnico" required>
-    </div>
+  <label>Cliente:</label>
+  <select formControlName="cliente">
+    <option *ngFor="let c of clientes" [ngValue]="{ id: c.id }">{{ c.nome }}</option>
+  </select>
 
-    <div>
-      <label for="cliente">Cliente</label>
-      <input type="text" id="cliente" name="cliente" [(ngModel)]="chamado.cliente" required>
-    </div>
+  <label>Técnico:</label>
+  <select formControlName="tecnico">
+    <option *ngFor="let t of tecnicos" [ngValue]="{ id: t.id }">{{ t.nome }}</option>
+  </select>
 
-    <button type="submit">Salvar</button>
-  </form>
-</div>
+  <button type="submit">Salvar</button>
+</form>

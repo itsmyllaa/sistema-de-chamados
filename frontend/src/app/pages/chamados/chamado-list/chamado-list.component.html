@@ -1,28 +1,39 @@
-<div class="chamados-container">
-  <h2>Lista de Chamados</h2>
+<h2>Lista de Chamados</h2>
 
-  <button (click)="novoChamado()">Novo Chamado</button>
+<div class="actions">
+  <button class="novo-btn" (click)="router.navigate(['/chamados/novo'])">+ Novo Chamado</button>
+</div>
 
-  <table>
-    <thead>
+<table class="chamado-table">
+  <thead>
     <tr>
-      <th>ID</th>
       <th>Título</th>
       <th>Status</th>
       <th>Prioridade</th>
-      <th>Técnico</th>
       <th>Cliente</th>
+      <th>Técnico</th>
+      <th>Ações</th>
     </tr>
-    </thead>
-    <tbody>
+  </thead>
+  <tbody>
     <tr *ngFor="let chamado of chamados">
-      <td>{{ chamado.id }}</td>
       <td>{{ chamado.titulo }}</td>
-      <td>{{ chamado.status }}</td>
-      <td>{{ chamado.prioridade }}</td>
-      <td>{{ chamado.tecnico }}</td>
-      <td>{{ chamado.cliente }}</td>
+      <td>
+        <span class="badge" [ngClass]="chamado.status.toLowerCase()">
+          {{ chamado.status }}
+        </span>
+      </td>
+      <td>
+        <span class="badge prioridade" [ngClass]="chamado.prioridade.toLowerCase()">
+          {{ chamado.prioridade }}
+        </span>
+      </td>
+      <td>{{ chamado.cliente?.nome }}</td>
+      <td>{{ chamado.tecnico?.nome }}</td>
+      <td>
+        <button class="editar" (click)="editar(chamado.id!)">Editar</button>
+        <button class="excluir" (click)="excluir(chamado.id!)">Excluir</button>
+      </td>
     </tr>
-    </tbody>
-  </table>
-</div>
+  </tbody>
+</table>

@@ -1,1 +1,181 @@
-/* You can add global styles to this file, and also import other style files */
+/* Customização do Toast - Global */
+.toast {
+  background-color: #28a745 !important; /* Cor verde para sucesso */
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  animation: slide-in 0.5s ease-out !important;
+}
+
+/* Personalizando o toast de erro */
+.toast-error {
+  background-color: #dc3545 !important; /* Cor vermelha para erro */
+  color: white !important;
+  border-radius: 10px !important;
+  padding: 10px 20px !important;
+  font-size: 16px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  animation: slide-in 0.5s ease-out !important;
+}
+
+/* Animação suave de entrada */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+  .toast {
+    font-size: 14px; /* Reduzir o tamanho da fonte em telas menores */
+    padding: 8px 15px;
+  }
+}
+
+/* Definindo a paleta de cores */
+:root {
+  --verde: #4caf50;
+  --verde-claro: #81c784;
+  --verde-pastel: #a5d6a7;
+  --branco: #ffffff;
+  --cinza-claro: #f5f5f5;
+}
+
+/* Corpo do aplicativo */
+body {
+  font-family: Arial, sans-serif;
+  background-color: var(--cinza-claro);
+  margin: 0;
+  padding: 0;
+}
+
+/* Cabeçalho */
+h2 {
+  color: var(--verde);
+  font-size: 24px;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  margin: 20px 0;
+  border-collapse: collapse;
+  background-color: var(--branco);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: var(--verde-pastel);
+  color: var(--verde);
+  font-weight: bold;
+}
+
+table td {
+  background-color: var(--branco);
+  color: #333;
+}
+
+button {
+  background-color: var(--verde);
+  color: var(--branco);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--verde-claro);
+}
+
+button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Formulários */
+form {
+  background-color: var(--branco);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--verde);
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  table {
+    font-size: 14px;
+  }
+
+  form {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  table th, table td {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  form label {
+    font-size: 12px;
+  }
+
+  form input,
+  form select,
+  form textarea {
+    font-size: 14px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

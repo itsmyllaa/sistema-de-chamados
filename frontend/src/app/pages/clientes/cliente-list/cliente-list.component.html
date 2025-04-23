@@ -1,24 +1,29 @@
-<div class="cliente-list-container">
-  <h2>Lista de Clientes</h2>
+<h2>Lista de Clientes</h2>
+<button (click)="novoCliente()">Novo Cliente</button>
 
-  <table class="cliente-table">
-    <thead>
-    <tr>
-      <th>ID</th>
-      <th>Nome</th>
-      <th>CPF</th>
-      <th>Email</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let cliente of clientes">
-      <td>{{ cliente.id }}</td>
-      <td>{{ cliente.nome }}</td>
-      <td>{{ cliente.cpf }}</td>
-      <td>{{ cliente.email }}</td>
-    </tr>
-    </tbody>
-  </table>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Nome</th>
+    <th>Email</th>
+    <th>Telefone</th>
+    <th>Endereço</th>
+    <th>Ações</th>
+  </tr>
+  </thead>
+  <tbody>
 
-  <button class="btn" (click)="novoCliente()">Novo Cliente</button>
-</div>
+  <tr *ngFor="let cliente of clientes">
+    <td>{{ cliente.id }}</td>
+    <td>{{ cliente.nome }}</td>
+    <td>{{ cliente.email }}</td>
+    <td>{{ cliente.telefone || 'N/A' }}</td>
+    <td>{{ cliente.endereco || 'N/A' }}</td>
+    <td>
+      <button (click)="editarCliente(cliente.id)">Editar</button>
+      <button (click)="deletarCliente(cliente.id)">Deletar</button>
+    </td>
+  </tr>
+  </tbody>
+</table>

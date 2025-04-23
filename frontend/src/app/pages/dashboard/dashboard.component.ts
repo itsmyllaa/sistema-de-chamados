@@ -1,21 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
-  totalChamados: number = 0;
-  totalClientes: number = 0;
-  totalTecnicos: number = 0;
+export class DashboardComponent {
 
-  constructor() {}
+  public barChartOptions = {
+    scaleShowVerticalLines: false,
+    responsive: true
+  };
 
-  ngOnInit(): void {
-    // Simulação (depois trocamos pelo backend real)
-    this.totalChamados = 8;
-    this.totalClientes = 5;
-    this.totalTecnicos = 3;
-  }
+  public barChartLabels = ['Jan', 'Feb', 'Mar', 'Apr', 'May'];
+  public barChartType = 'bar';
+  public barChartLegend = true;
+
+  public barChartData = [
+    {
+      data: [12, 19, 3, 5, 2],
+      label: 'Chamados Resolvidos',
+      backgroundColor: '#28a745'
+    }
+  ];
 }
