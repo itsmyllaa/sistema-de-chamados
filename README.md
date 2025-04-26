@@ -54,7 +54,7 @@ Sistema web completo para gerenciamento de chamados técnicos, clientes e profis
 
 ### 🌐 Frontend
 
-```bash
+bash
 cd frontend
 npm install
 ng serve
